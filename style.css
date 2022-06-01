@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+:root {
+    --white-fill: invert(100%) sepia(4%) saturate(7442%) hue-rotate(326deg) brightness(110%) contrast(113%);
+    --blue-fill: invert(37%) sepia(75%) saturate(4961%) hue-rotate(201deg) brightness(104%) contrast(96%);
+    --lighter: #ffffff;
+    --darker: #ececfd;
+    --colored: #057bfa;
+    --shadow: #5e5e5e;
+    --grid-gap: 1em;
+    --margin-for-h: 1em;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+html, body, div.outer-container {
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html, body, h1, h2, h3, h4, ul, p {
+    margin: 0;
+    padding: 0;
+}
+
+* > .grid {
+    display: grid;
+}
+
+* > a {
+    text-decoration: none;
+    color: black;
+}
+
+div.outer-container {
+    grid-template-columns: 1fr 4fr;
+}
+
+.sidebar {
+    display: flex;
+    gap: calc(3 * var(--grid-gap));
+    flex-direction: column;
+    background-color: var(--colored);
+    color: var(--lighter);
+    padding-top: 1em;
+}
+
+.links {
+    gap: var(--grid-gap);
+}
+
+.sidebar > .sidebar-header, .sidebar > .links > div > a {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: calc(var(--grid-gap) / 2);
+    grid-auto-flow: column;
+    align-items: center;
+    color: var(--lighter);
+}
+
+.sidebar > .links > div > a {
+    font-size: 1.25rem;
+}
+
+.links > div > a > img {
+    justify-self: center;
+    filter: var(--white-fill)
+}
+
+img[alt=dashboard-icon] {
+    justify-self: center;
+    filter: var(--white-fill);
+    min-height: 100%;
+}
+
+img[alt=user-icon] {
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+img.us-icon-low {
+    max-width: 90px;
+    max-height: auto;
+}
+
+img.us-icon-up {
+    width: 50px;
+    height: auto;
+}
+
+.right-side > div.header {
+    box-shadow: 1px 1px 10px var(--shadow);
+    z-index: 1;
+    align-items: start;
+    padding: 1em 0em 1em 1em;
+    gap: var(--grid-gap);
+
+}
+
+.header > .upper-header, .header > .lower-header {
+    grid-auto-flow: column;
+    align-items: center;
+}
+
+.header > .upper-header {
+    grid-template-columns: 3fr 1fr;
+}
+
+.header > * > * {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: var(--grid-gap);
+}
+
+
+.search-section > input.search {
+    background-color: var(--darker);
+    border: none;
+    border-radius: 20px;
+    flex: 1;
+}
+
+.header-text {
+    flex: 1;
+}
+
+
+.notif-section > a.user-link {
+    display: flex;
+    align-items: center;
+    gap: var(--grid-gap);
+}
+
+
+div.button-section > button {
+    background-color: var(--colored);
+    color: var(--lighter);
+    font-family: 'Roboto Condensed', sans-serif;
+    border: none;
+    font-size: 1.12rem;
+    border-radius: 30px;
+    padding: 1em 2em;
+
+}
+
+
+.right-side > div.main-content {
+    grid-auto-flow: column;
+    grid-template-columns: 3fr 1fr;
+    background-color: var(--darker);
+    gap: var(--grid-gap);
+    padding: 1em;
+}
+
+h2 {
+    margin-top: var(--margin-for-h);
+    margin-bottom: calc(var(--margin-for-h) / 3);
+
+}
+
+div.projects-area {
+    display: flex;
+    flex-direction: column;
+}
+
+div.projects {
+    grid-template-columns: repeat(auto-fit, max(20ch, calc(50% - 1em)));
+    gap: var(--grid-gap);
+    flex: 1;
+}
+
+div.project > h3 {
+    color: var(--colored);
+}
+
+div.project > p {
+    flex: 1;
+}
+
+div.project > div {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--grid-gap);
+}
+
+div.project > div > a > img {
+    filter: var(--blue-fill);
+}
+
+.card {
+    background-color: var(--lighter);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--grid-gap);
+    padding: 1em;
+}
+
+div.main-content > div.right-content {
+    align-items: start;
+}
+
+.announcement >  h4 {
+    margin-bottom: calc(var(--margin-for-h) / 4);
+    color: var(--colored);
+}
+
+div.ann-content > div.separator {
+    background-color: var(--shadow);
+    height: 1px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.trending > a.grid {
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: center;
+    gap: var(--grid-gap);
+}
+
+div.trending > a.grid > div > :nth-child(2) {
+    letter-spacing: .3em;
+}
+
+
+
+
+
+
+
